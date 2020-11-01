@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('1-prbuild') {
+            steps {
+                echo 'Hello World'
+                sh "sleep 5"
+            }
+        }
+        stage('2-build_01') {
+            steps {
+                echo 'Hello World'
+                sh ''' 
+                df -h 
+                hostname
+                ip a 
+                '''
+            }
+        }
+         stage('3-test01') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
